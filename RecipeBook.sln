@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{DF14E4D6-24BE-4080-9393-B55537426D3E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{AA5B67A3-09BB-424D-AEB1-B4B6EBEF0C1B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RecipeBook.API", "src\RecipeBook.API\RecipeBook.API.csproj", "{A9D2BE5A-53D9-4A2F-9889-E6D9331EF243}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{240F487F-61BE-4638-BE94-3592B8548DD2}"
+	ProjectSection(SolutionItems) = preProject
+		compose.yaml = compose.yaml
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{A9D2BE5A-53D9-4A2F-9889-E6D9331EF243} = {DF14E4D6-24BE-4080-9393-B55537426D3E}
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A9D2BE5A-53D9-4A2F-9889-E6D9331EF243}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A9D2BE5A-53D9-4A2F-9889-E6D9331EF243}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A9D2BE5A-53D9-4A2F-9889-E6D9331EF243}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A9D2BE5A-53D9-4A2F-9889-E6D9331EF243}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
