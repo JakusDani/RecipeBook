@@ -2,25 +2,6 @@
   "version": 3,
   "targets": {
     "net9.0": {
-      "Microsoft.AspNetCore.OpenApi/9.0.0": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.OpenApi": "1.6.17"
-        },
-        "compile": {
-          "lib/net9.0/Microsoft.AspNetCore.OpenApi.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net9.0/Microsoft.AspNetCore.OpenApi.dll": {
-            "related": ".xml"
-          }
-        },
-        "frameworkReferences": [
-          "Microsoft.AspNetCore.App"
-        ]
-      },
       "Microsoft.Extensions.Configuration.Abstractions/9.0.0": {
         "type": "package",
         "dependencies": {
@@ -248,35 +229,6 @@
           "buildTransitive/net8.0/_._": {}
         }
       },
-      "Microsoft.OpenApi/1.6.17": {
-        "type": "package",
-        "compile": {
-          "lib/netstandard2.0/Microsoft.OpenApi.dll": {
-            "related": ".pdb;.xml"
-          }
-        },
-        "runtime": {
-          "lib/netstandard2.0/Microsoft.OpenApi.dll": {
-            "related": ".pdb;.xml"
-          }
-        }
-      },
-      "Scalar.AspNetCore/1.2.72": {
-        "type": "package",
-        "compile": {
-          "lib/net9.0/Scalar.AspNetCore.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net9.0/Scalar.AspNetCore.dll": {
-            "related": ".xml"
-          }
-        },
-        "frameworkReferences": [
-          "Microsoft.AspNetCore.App"
-        ]
-      },
       "Serilog/4.2.0": {
         "type": "package",
         "compile": {
@@ -433,39 +385,10 @@
             "related": ".xml"
           }
         }
-      },
-      "RecipeBook.Common/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v9.0",
-        "dependencies": {
-          "Serilog.AspNetCore": "9.0.0"
-        },
-        "compile": {
-          "bin/placeholder/RecipeBook.Common.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/RecipeBook.Common.dll": {}
-        }
       }
     }
   },
   "libraries": {
-    "Microsoft.AspNetCore.OpenApi/9.0.0": {
-      "sha512": "FqUK5j1EOPNuFT7IafltZQ3cakqhSwVzH5ZW1MhZDe4pPXs9sJ2M5jom1Omsu+mwF2tNKKlRAzLRHQTZzbd+6Q==",
-      "type": "package",
-      "path": "microsoft.aspnetcore.openapi/9.0.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "Icon.png",
-        "PACKAGE.md",
-        "THIRD-PARTY-NOTICES.TXT",
-        "lib/net9.0/Microsoft.AspNetCore.OpenApi.dll",
-        "lib/net9.0/Microsoft.AspNetCore.OpenApi.xml",
-        "microsoft.aspnetcore.openapi.9.0.0.nupkg.sha512",
-        "microsoft.aspnetcore.openapi.nuspec"
-      ]
-    },
     "Microsoft.Extensions.Configuration.Abstractions/9.0.0": {
       "sha512": "lqvd7W3FGKUO1+ZoUEMaZ5XDJeWvjpy2/M/ptCGz3tXLD4HWVaSzjufsAsjemasBEg+2SxXVtYVvGt5r2nKDlg==",
       "type": "package",
@@ -880,38 +803,6 @@
         "useSharedDesignerContext.txt"
       ]
     },
-    "Microsoft.OpenApi/1.6.17": {
-      "sha512": "Le+kehlmrlQfuDFUt1zZ2dVwrhFQtKREdKBo+rexOwaCoYP0/qpgT9tLxCsZjsgR5Itk1UKPcbgO+FyaNid/bA==",
-      "type": "package",
-      "path": "microsoft.openapi/1.6.17",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "README.md",
-        "lib/netstandard2.0/Microsoft.OpenApi.dll",
-        "lib/netstandard2.0/Microsoft.OpenApi.pdb",
-        "lib/netstandard2.0/Microsoft.OpenApi.xml",
-        "microsoft.openapi.1.6.17.nupkg.sha512",
-        "microsoft.openapi.nuspec"
-      ]
-    },
-    "Scalar.AspNetCore/1.2.72": {
-      "sha512": "NAixkOqsJN8dcKAelA1jfHhTsDIn5EV4uopzwfJMsCjjRbbp4CY4FF+wwLRbFnt5dr0ZBqXDUN7NCNhfnDvfQA==",
-      "type": "package",
-      "path": "scalar.aspnetcore/1.2.72",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "README.md",
-        "icon.png",
-        "lib/net8.0/Scalar.AspNetCore.dll",
-        "lib/net8.0/Scalar.AspNetCore.xml",
-        "lib/net9.0/Scalar.AspNetCore.dll",
-        "lib/net9.0/Scalar.AspNetCore.xml",
-        "scalar.aspnetcore.1.2.72.nupkg.sha512",
-        "scalar.aspnetcore.nuspec"
-      ]
-    },
     "Serilog/4.2.0": {
       "sha512": "gmoWVOvKgbME8TYR+gwMf7osROiWAURterc6Rt2dQyX7wtjZYpqFiA/pY6ztjGQKKV62GGCyOcmtP1UKMHgSmA==",
       "type": "package",
@@ -1118,18 +1009,11 @@
         "serilog.sinks.file.6.0.0.nupkg.sha512",
         "serilog.sinks.file.nuspec"
       ]
-    },
-    "RecipeBook.Common/1.0.0": {
-      "type": "project",
-      "path": "../RecipeBook.Common/RecipeBook.Common.csproj",
-      "msbuildProject": "../RecipeBook.Common/RecipeBook.Common.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net9.0": [
-      "Microsoft.AspNetCore.OpenApi >= 9.0.0",
-      "RecipeBook.Common >= 1.0.0",
-      "Scalar.AspNetCore >= 1.2.72"
+      "Serilog.AspNetCore >= 9.0.0"
     ]
   },
   "packageFolders": {
@@ -1138,11 +1022,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/jakus/Documents/Practice/RecipeBook/RecipeBook/src/RecipeBook.API/RecipeBook.API.csproj",
-      "projectName": "RecipeBook.API",
-      "projectPath": "/home/jakus/Documents/Practice/RecipeBook/RecipeBook/src/RecipeBook.API/RecipeBook.API.csproj",
+      "projectUniqueName": "/home/jakus/Documents/Practice/RecipeBook/RecipeBook/src/RecipeBook.Common/RecipeBook.Common.csproj",
+      "projectName": "RecipeBook.Common",
+      "projectPath": "/home/jakus/Documents/Practice/RecipeBook/RecipeBook/src/RecipeBook.Common/RecipeBook.Common.csproj",
       "packagesPath": "/home/jakus/.nuget/packages/",
-      "outputPath": "/home/jakus/Documents/Practice/RecipeBook/RecipeBook/src/RecipeBook.API/obj/",
+      "outputPath": "/home/jakus/Documents/Practice/RecipeBook/RecipeBook/src/RecipeBook.Common/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/home/jakus/.nuget/NuGet/NuGet.Config"
@@ -1156,11 +1040,7 @@
       "frameworks": {
         "net9.0": {
           "targetAlias": "net9.0",
-          "projectReferences": {
-            "/home/jakus/Documents/Practice/RecipeBook/RecipeBook/src/RecipeBook.Common/RecipeBook.Common.csproj": {
-              "projectPath": "/home/jakus/Documents/Practice/RecipeBook/RecipeBook/src/RecipeBook.Common/RecipeBook.Common.csproj"
-            }
-          }
+          "projectReferences": {}
         }
       },
       "warningProperties": {
@@ -1179,13 +1059,9 @@
       "net9.0": {
         "targetAlias": "net9.0",
         "dependencies": {
-          "Microsoft.AspNetCore.OpenApi": {
+          "Serilog.AspNetCore": {
             "target": "Package",
             "version": "[9.0.0, )"
-          },
-          "Scalar.AspNetCore": {
-            "target": "Package",
-            "version": "[1.2.72, )"
           }
         },
         "imports": [
@@ -1200,9 +1076,6 @@
         "assetTargetFallback": true,
         "warn": true,
         "frameworkReferences": {
-          "Microsoft.AspNetCore.App": {
-            "privateAssets": "none"
-          },
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
           }

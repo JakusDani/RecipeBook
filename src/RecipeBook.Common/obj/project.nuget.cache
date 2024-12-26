@@ -1,10 +1,9 @@
 {
   "version": 2,
-  "dgSpecHash": "mlGfXchVP0k=",
+  "dgSpecHash": "LKRwrydRtPk=",
   "success": true,
-  "projectFilePath": "/home/jakus/Documents/Practice/RecipeBook/RecipeBook/src/RecipeBook.API/RecipeBook.API.csproj",
+  "projectFilePath": "/home/jakus/Documents/Practice/RecipeBook/RecipeBook/src/RecipeBook.Common/RecipeBook.Common.csproj",
   "expectedPackageFiles": [
-    "/home/jakus/.nuget/packages/microsoft.aspnetcore.openapi/9.0.0/microsoft.aspnetcore.openapi.9.0.0.nupkg.sha512",
     "/home/jakus/.nuget/packages/microsoft.extensions.configuration.abstractions/9.0.0/microsoft.extensions.configuration.abstractions.9.0.0.nupkg.sha512",
     "/home/jakus/.nuget/packages/microsoft.extensions.configuration.binder/9.0.0/microsoft.extensions.configuration.binder.9.0.0.nupkg.sha512",
     "/home/jakus/.nuget/packages/microsoft.extensions.dependencyinjection/9.0.0/microsoft.extensions.dependencyinjection.9.0.0.nupkg.sha512",
@@ -17,8 +16,6 @@
     "/home/jakus/.nuget/packages/microsoft.extensions.logging.abstractions/9.0.0/microsoft.extensions.logging.abstractions.9.0.0.nupkg.sha512",
     "/home/jakus/.nuget/packages/microsoft.extensions.options/9.0.0/microsoft.extensions.options.9.0.0.nupkg.sha512",
     "/home/jakus/.nuget/packages/microsoft.extensions.primitives/9.0.0/microsoft.extensions.primitives.9.0.0.nupkg.sha512",
-    "/home/jakus/.nuget/packages/microsoft.openapi/1.6.17/microsoft.openapi.1.6.17.nupkg.sha512",
-    "/home/jakus/.nuget/packages/scalar.aspnetcore/1.2.72/scalar.aspnetcore.1.2.72.nupkg.sha512",
     "/home/jakus/.nuget/packages/serilog/4.2.0/serilog.4.2.0.nupkg.sha512",
     "/home/jakus/.nuget/packages/serilog.aspnetcore/9.0.0/serilog.aspnetcore.9.0.0.nupkg.sha512",
     "/home/jakus/.nuget/packages/serilog.extensions.hosting/9.0.0/serilog.extensions.hosting.9.0.0.nupkg.sha512",
