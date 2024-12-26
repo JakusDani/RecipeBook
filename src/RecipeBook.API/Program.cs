@@ -1,19 +1,26 @@
-var builder = WebApplication.CreateBuilder(args);
+using RecipeBook.Common.Extension;
+using Serilog;
 
-// Add services to the container.
-// Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
-builder.Services.AddOpenApi();
+var builder = WebApplication.CreateBuilder(args);
+var services = builder.Services;
+
+services.AddOpenApi();
+builder.UseSerilogInWebApp();
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
     app.MapOpenApi();
 }
 
+app.UseSerilogRequestLogging();
 app.UseHttpsRedirection();
 
-app.MapGet("/", () => "OK");
+app.MapGet("/", (ILogger<Program> logger) =>
+{
+    logger.LogInformation("Hello World!");
+    return "OK";
+});
 
 app.Run();
