@@ -1,4 +1,5 @@
 using RecipeBook.Common.Extension;
+using RecipeBook.Repository.old;
 using Scalar.AspNetCore;
 using Serilog;
 
@@ -6,6 +7,7 @@ var builder = WebApplication.CreateBuilder(args);
 var services = builder.Services;
 
 services.AddOpenApi();
+services.AddDbContext<RecipeBookContext>();
 builder.UseSerilogInWebApp();
 
 var app = builder.Build();
