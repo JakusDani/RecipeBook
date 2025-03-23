@@ -14,6 +14,7 @@ internal sealed class UnitOfMeasurementConfiguration : IEntityTypeConfiguration<
 
         builder.Property(unit => unit.Id);
         builder.Property(unit => unit.Name).IsRequired().HasMaxLength(50);
+        builder.Property(unit => unit.ShortName).IsRequired().HasMaxLength(10);
 
         builder.HasOne(unit => unit.MeasurementSystem)
             .WithMany(system => system.UnitOfMeasurements)

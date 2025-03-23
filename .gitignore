@@ -8,6 +8,7 @@
 bin/
 obj/
 logs/
+[D-d]atabases/
 
 # Common node modules locations
 /node_modules
