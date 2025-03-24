@@ -29,7 +29,8 @@ app.UseHttpsRedirection();
 app.MapGet("/", (ILogger<Program> logger, IUsersRepository userRepo) =>
 {
     logger.LogInformation("Hello World!");
-    return string.Join(", ", userRepo.GetAll());
+    var asd = userRepo.GetAll();
+    return string.Join(", ", "Hi");
 });
 
 app.Run();

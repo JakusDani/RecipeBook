@@ -1,6 +1,5 @@
 using Microsoft.EntityFrameworkCore;
 using RecipeBook.Repository.Entities;
-using System;
 
 namespace RecipeBook.Repository;
 
@@ -14,7 +13,7 @@ public class RecipeBookContext : DbContext
     public DbSet<UnitOfMeasurementEntity> UnitOfMeasurement { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        => optionsBuilder.UseSqlite("Data Source=Databases/RecipeBook.db");
+        => optionsBuilder.UseSqlite("My little Secret ;)");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder) =>
         modelBuilder.ApplyConfigurationsFromAssembly(typeof(RecipeBookContext).Assembly);

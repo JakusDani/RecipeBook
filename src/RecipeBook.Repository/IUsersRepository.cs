@@ -5,6 +5,6 @@ namespace RecipeBook.Repository
 {
     public interface IUsersRepository
     {
-        IEnumerable<RecipeEntity> GetAll();
+        IEnumerable<CategoryEntity> GetAll();
     }
 }
