@@ -8,7 +8,8 @@ var services = builder.Services;
 
 services.AddOpenApi();
 services.AddDbContext<RecipeBookContext>();
-services.AddTransient<IUsersRepository, UsersRepository>();
+services.AddTransient<IRepositoryManager, RepositoryManager>();
+//services.AddHostedService<SeederService>();
 builder.UseSerilogInWebApp();
 
 var app = builder.Build();
@@ -26,10 +27,10 @@ if (app.Environment.IsDevelopment())
 app.UseSerilogRequestLogging();
 app.UseHttpsRedirection();
 
-app.MapGet("/", (ILogger<Program> logger, IUsersRepository userRepo) =>
+app.MapGet("/", (ILogger<Program> logger, IRepositoryManager repoManager) =>
 {
     logger.LogInformation("Hello World!");
-    var asd = userRepo.GetAll();
+    var asd = repoManager.CategoryRepository.GetAll();
     return string.Join(", ", "Hi");
 });
 
