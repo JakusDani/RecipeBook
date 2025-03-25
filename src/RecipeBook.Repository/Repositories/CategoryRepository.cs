@@ -1,7 +1,7 @@
 ﻿using RecipeBook.Common.Enumeration;
 using RecipeBook.Repository.Entities;
 
-namespace RecipeBook.Repository;
+namespace RecipeBook.Repository.Repositories;
 
 internal class CategoryRepository : ICategoryRepository
 {
