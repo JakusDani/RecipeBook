@@ -5,6 +5,4 @@ namespace RecipeBook.Repository.Repositories;
 public interface ICategoryRepository
 {
     IEnumerable<CategoryEntity> GetAll();
-
-    Task InitCategories();
 }

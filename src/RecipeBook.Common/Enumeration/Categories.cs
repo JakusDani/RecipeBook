@@ -2,10 +2,10 @@
 
 public enum Categories
 {
-    Soup,
-    Salad,
-    MainCourse,
-    Dessert,
-    Drink,
-    Bakery,
+    Soup = 1,
+    Salad = 2,
+    MainCourse = 3,
+    Dessert = 4,
+    Drink = 5,
+    Bakery = 6,
 }

@@ -12,8 +12,9 @@ public class RecipeBookContext : DbContext
     public DbSet<MeasurementSystemEntity> MeasurementSystem { get; set; }
     public DbSet<UnitOfMeasurementEntity> UnitOfMeasurement { get; set; }
 
-    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        => optionsBuilder.UseSqlite("My little Secret ;)");
+    public RecipeBookContext(DbContextOptions<RecipeBookContext> options) : base(options)
+    {
+    }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder) =>
         modelBuilder.ApplyConfigurationsFromAssembly(typeof(RecipeBookContext).Assembly);

@@ -17,7 +17,6 @@ internal sealed class CategoryConfiguration : IEntityTypeConfiguration<CategoryE
 
         builder.HasMany(category => category.Recipes)
             .WithOne(recipe => recipe.Category)
-            .HasForeignKey(recipe => recipe.CategoryId)
             .OnDelete(DeleteBehavior.NoAction);
     }
 }
