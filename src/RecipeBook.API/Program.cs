@@ -1,8 +1,7 @@
 using Microsoft.EntityFrameworkCore;
-using RecipeBook.Common.Enumeration;
 using RecipeBook.Common.Extension;
 using RecipeBook.Repository;
-using RecipeBook.Repository.Entities;
+using RecipeBook.Repository.Extensions;
 using Scalar.AspNetCore;
 using Serilog;
 
@@ -14,18 +13,7 @@ services.AddDbContext<RecipeBookContext>(optionsBuilder =>
     optionsBuilder.UseSqlite("My little Secret ;)")
             .UseAsyncSeeding(async (context, _, cts) =>
             {
-                var categoriesToSeed = Enum.GetValues<Categories>()
-                    .Select(item => new CategoryEntity
-                    {
-                        Id = (int)item,
-                        Name = item.ToString(),
-                        CreatedAt = DateTime.Now,
-                        UpdatedAt = DateTime.Now
-                    }).ToList();
-
-                context.Set<CategoryEntity>()
-                .AddRange(categoriesToSeed);
-
+                context.AddCategoriesIfNotExists();
                 await context.SaveChangesAsync();
             }));
 
@@ -57,7 +45,7 @@ app.MapGet("/", (ILogger<Program> logger, IRepositoryManager repoManager) =>
 {
     logger.LogInformation("Select all record...");
     var all = repoManager.CategoryRepository.GetAll();
-    return string.Join(", ", all);
+    return string.Join(", ", all.Select(x => x.Name));
 });
 
 app.Run();
