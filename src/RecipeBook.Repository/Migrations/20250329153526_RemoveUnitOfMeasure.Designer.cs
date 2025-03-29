@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using RecipeBook.Repository;
 
@@ -10,9 +11,11 @@ using RecipeBook.Repository;
 namespace RecipeBook.Repository.Migrations
 {
     [DbContext(typeof(RecipeBookContext))]
-    partial class RecipeBookContextModelSnapshot : ModelSnapshot
+    [Migration("20250329153526_RemoveUnitOfMeasure")]
+    partial class RemoveUnitOfMeasure
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "9.0.3");
@@ -41,7 +44,7 @@ namespace RecipeBook.Repository.Migrations
 
             modelBuilder.Entity("RecipeBook.Repository.Entities.ImagesEntity", b =>
                 {
-                    b.Property<string>("Id")
+                    b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("TEXT");
 
@@ -58,8 +61,7 @@ namespace RecipeBook.Repository.Migrations
                         .HasMaxLength(100)
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("RecipeId")
-                        .IsRequired()
+                    b.Property<Guid>("RecipeId")
                         .HasColumnType("TEXT");
 
                     b.Property<DateTime>("UpdatedAt")
@@ -74,7 +76,8 @@ namespace RecipeBook.Repository.Migrations
 
             modelBuilder.Entity("RecipeBook.Repository.Entities.IngredientsEntity", b =>
                 {
-                    b.Property<string>("Id")
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("TEXT");
 
                     b.Property<DateTime>("CreatedAt")
@@ -88,8 +91,7 @@ namespace RecipeBook.Repository.Migrations
                     b.Property<double>("Quantity")
                         .HasColumnType("REAL");
 
-                    b.Property<string>("RecipeId")
-                        .IsRequired()
+                    b.Property<Guid>("RecipeId")
                         .HasColumnType("TEXT");
 
                     b.Property<int>("UnitOfMeasurementId")
@@ -126,12 +128,13 @@ namespace RecipeBook.Repository.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("MeasurementSystem", (string)null);
+                    b.ToTable("MeasurementSystem");
                 });
 
             modelBuilder.Entity("RecipeBook.Repository.Entities.RecipeEntity", b =>
                 {
-                    b.Property<string>("Id")
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("TEXT");
 
                     b.Property<int>("CategoryId")

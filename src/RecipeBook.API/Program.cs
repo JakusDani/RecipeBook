@@ -17,6 +17,7 @@ services.AddDbContext<RecipeBookContext>(optionsBuilder =>
             {
                 context.AddCategoriesIfNotExists();
                 context.AddMeasurementSystemIfNotExists();
+                context.AddUnitOfMeasurementIfNotExists();
                 await context.SaveChangesAsync(cts);
             }));
 

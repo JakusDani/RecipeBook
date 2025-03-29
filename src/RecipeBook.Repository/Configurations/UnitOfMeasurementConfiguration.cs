@@ -11,6 +11,7 @@ internal sealed class UnitOfMeasurementConfiguration : IEntityTypeConfiguration<
         builder.ToTable("UnitOfMeasurement");
 
         builder.HasKey(unit => unit.Id);
+        builder.Property(unit => unit.Id).ValueGeneratedOnAdd();
 
         builder.Property(unit => unit.Id);
         builder.Property(unit => unit.Name).IsRequired().HasMaxLength(50);

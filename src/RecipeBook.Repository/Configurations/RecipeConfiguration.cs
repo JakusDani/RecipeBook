@@ -11,7 +11,6 @@ internal sealed class RecipeConfiguration : IEntityTypeConfiguration<RecipeEntit
         builder.ToTable("Recipe");
 
         builder.HasKey(recipe => recipe.Id);
-        builder.Property(recipe => recipe.Id).ValueGeneratedOnAdd();
 
         builder.Property(recipe => recipe.Name).IsRequired().HasMaxLength(100);
         builder.Property(recipe => recipe.Description).HasMaxLength(500);

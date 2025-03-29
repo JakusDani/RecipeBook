@@ -13,8 +13,7 @@ public class RecipeBookContext : DbContext
     public DbSet<UnitOfMeasurementEntity> UnitOfMeasurement { get; set; }
 
     public RecipeBookContext(DbContextOptions<RecipeBookContext> options) : base(options)
-    {
-    }
+    { }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder) =>
         modelBuilder.ApplyConfigurationsFromAssembly(typeof(RecipeBookContext).Assembly);

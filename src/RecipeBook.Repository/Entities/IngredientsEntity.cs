@@ -2,8 +2,8 @@
 
 public class IngredientsEntity : BaseEntity
 {
-    public Guid Id { get; set; }
-    public Guid RecipeId { get; set; }
+    public string Id { get; set; } = Guid.NewGuid().ToString();
+    public string RecipeId { get; set; } = null!;
     public int UnitOfMeasurementId { get; set; }
     public string Name { get; set; } = string.Empty;
     public double Quantity { get; set; }

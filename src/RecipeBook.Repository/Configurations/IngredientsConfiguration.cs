@@ -9,9 +9,9 @@ internal sealed class IngredientsConfiguration : IEntityTypeConfiguration<Ingred
     public void Configure(EntityTypeBuilder<IngredientsEntity> builder)
     {
         builder.ToTable("Ingredients");
+
         builder.HasKey(ingredient => ingredient.Id);
 
-        builder.Property(ingredient => ingredient.Id).ValueGeneratedOnAdd();
         builder.Property(ingredient => ingredient.Name).IsRequired().HasMaxLength(100);
         builder.Property(ingredient => ingredient.Quantity).IsRequired();
         builder.Property(ingredient => ingredient.UnitOfMeasurementId).IsRequired();
