@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using RecipeBook.Common.Enumeration;
 using RecipeBook.Repository.Entities;
+using RecipeBook.Repository.Extensions.Comparers;
 
 namespace RecipeBook.Repository.Extensions;
 

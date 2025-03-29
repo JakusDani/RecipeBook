@@ -8,9 +8,11 @@ using Serilog;
 var builder = WebApplication.CreateBuilder(args);
 var services = builder.Services;
 
+var connectionString = builder.Configuration["Database:ConnectionString"];
+
 services.AddOpenApi();
 services.AddDbContext<RecipeBookContext>(optionsBuilder =>
-    optionsBuilder.UseSqlite("My little Secret ;)")
+    optionsBuilder.UseSqlite($"Data Source={connectionString}")
             .UseAsyncSeeding(async (context, _, cts) =>
             {
                 context.AddCategoriesIfNotExists();
