@@ -16,7 +16,8 @@ services.AddDbContext<RecipeBookContext>(optionsBuilder =>
             .UseAsyncSeeding(async (context, _, cts) =>
             {
                 context.AddCategoriesIfNotExists();
-                await context.SaveChangesAsync();
+                context.AddMeasurementSystemIfNotExists();
+                await context.SaveChangesAsync(cts);
             }));
 
 services.AddTransient<IRepositoryManager, RepositoryManager>();

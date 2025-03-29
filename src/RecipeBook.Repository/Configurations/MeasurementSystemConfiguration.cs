@@ -10,11 +10,8 @@ internal sealed class MeasurementSystemConfiguration : IEntityTypeConfiguration<
     {
         builder.HasKey(measurementSystem => measurementSystem.Id);
 
-        builder.Property(measurementSystem => measurementSystem.Name).IsRequired().HasMaxLength(50);
-
-        builder.HasMany(measurementSystem => measurementSystem.UnitOfMeasurements)
-            .WithOne(unitOfMeasurement => unitOfMeasurement.MeasurementSystem)
-            .HasForeignKey(unitOfMeasurement => unitOfMeasurement.MeasurementSystemId)
-            .OnDelete(DeleteBehavior.Cascade);
+        builder.Property(measurementSystem => measurementSystem.Name)
+            .IsRequired()
+            .HasMaxLength(50);
     }
 }
