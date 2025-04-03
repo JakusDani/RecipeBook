@@ -44,10 +44,10 @@ public static class UnitOfMeasurementSeed
     }
 
     private static void AddNewCategories(DbContext context,
-        List<UnitOfMeasurementEntity> categoriesToSeed,
-        List<UnitOfMeasurementEntity> categories)
+        List<UnitOfMeasurementEntity> UnitOfMeasurementToSeed,
+        List<UnitOfMeasurementEntity> UnitOfMeasurements)
     {
-        var newValue = categoriesToSeed.Except(categories, new UnitOfMeasurementComparer()).ToList();
+        var newValue = UnitOfMeasurementToSeed.Except(UnitOfMeasurements, new UnitOfMeasurementComparer()).ToList();
         context.Set<UnitOfMeasurementEntity>().AddRange(newValue);
     }
 

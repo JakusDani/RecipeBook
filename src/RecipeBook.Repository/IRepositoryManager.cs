@@ -1,9 +1,11 @@
 ﻿using RecipeBook.Repository.Repositories;
 
-namespace RecipeBook.Repository
+namespace RecipeBook.Repository;
+
+public interface IRepositoryManager
 {
-    public interface IRepositoryManager
-    {
-        ICategoryRepository CategoryRepository { get; }
-    }
+    ICategoryRepository CategoryRepository { get; }
+    IRecipeRepository RecipeRepository { get; }
+    IIngredientRepository IngredientRepository { get; }
+    IUnitOfMeasurementRepository UnitOfMeasurementRepository { get; }
 }

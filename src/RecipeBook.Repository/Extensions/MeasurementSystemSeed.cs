@@ -46,7 +46,7 @@ public static class MeasurementSystemSeed
     {
         foreach (var item in categories)
         {
-            var categoryName = ((Categories)item.Id).ToString();
+            var categoryName = ((MeasurementSystems)item.Id).ToString();
             if (item.Name != categoryName)
             {
                 item.Name = categoryName;

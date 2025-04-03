@@ -6,7 +6,7 @@ public enum Categories
     Salad = 2,
     MainCourse = 3,
     Dessert = 4,
-    Drinkkkk = 5,
+    Drink = 5,
     Bakery = 6,
     Breakfast = 7,
 }
