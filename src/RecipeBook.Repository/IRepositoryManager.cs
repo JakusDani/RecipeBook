@@ -8,4 +8,6 @@ public interface IRepositoryManager
     IRecipeRepository RecipeRepository { get; }
     IIngredientRepository IngredientRepository { get; }
     IUnitOfMeasurementRepository UnitOfMeasurementRepository { get; }
+    IImagesRepository ImageRepository { get; }
+    IMeasurementSystemRepository MeasurementSystemRepository { get; }
 }
