@@ -48,10 +48,7 @@ app.UseHttpsRedirection();
 app.MapGet("/", (ILogger<Program> logger, IRepositoryManager repoManager) =>
 {
     logger.LogInformation("Select all record...");
-    //var allCat = repoManager.CategoryRepository.GetAll();
     var allRecipe = repoManager.RecipeRepository.GetAll();
-    //var ingredients = repoManager.IngredientRepository.GetAll();
-    //var allUnit = repoManager.UnitOfMeasurementRepository.GetAll();
     return string.Join(", ", allRecipe.Select(x => x.Name));
 });
 
