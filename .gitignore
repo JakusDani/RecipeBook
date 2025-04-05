@@ -1,15 +1,18 @@
 # Created by https://www.toptal.com/developers/gitignore/api/dotnetcore
 # Edit at https://www.toptal.com/developers/gitignore?templates=dotnetcore
 .idea/
+.vs/
 
 ### DotnetCore ###
 # .NET Core build folders
-[B]bin/
-[O]obj/
+bin/
+obj/
 logs/
+[D-d]atabases/
 
 # Common node modules locations
 /node_modules
 /wwwroot/node_modules
 
+/src/RecipeBook.API/appsettings.development.json
 # End of https://www.toptal.com/developers/gitignore/api/dotnetcore
