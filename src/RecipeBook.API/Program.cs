@@ -1,5 +1,9 @@
+using FluentValidation;
 using Microsoft.EntityFrameworkCore;
+using RecipeBook.API.MiddleWares;
+using RecipeBook.API.Validations;
 using RecipeBook.Common.Extension;
+using RecipeBook.Common.Models.Requests;
 using RecipeBook.Repository;
 using RecipeBook.Repository.Extensions;
 using Scalar.AspNetCore;
@@ -22,6 +26,7 @@ services.AddDbContext<RecipeBookContext>(optionsBuilder =>
             }));
 
 services.AddTransient<IRepositoryManager, RepositoryManager>();
+builder.Services.AddValidatorsFromAssemblyContaining<RecipeValidator>();
 builder.UseSerilogInWebApp();
 
 var app = builder.Build();
@@ -45,11 +50,13 @@ if (app.Environment.IsDevelopment())
 app.UseSerilogRequestLogging();
 app.UseHttpsRedirection();
 
-app.MapGet("/", (ILogger<Program> logger, IRepositoryManager repoManager) =>
+app.MapGet("/", (ILogger<Program> logger,
+    IRepositoryManager repoManager,
+    IValidator<RecipeRequest> validator) =>
 {
     logger.LogInformation("Select all record...");
     var allRecipe = repoManager.RecipeRepository.GetAll();
     return string.Join(", ", allRecipe.Select(x => x.Name));
-});
+}).AddEndpointFilter<RecipeValidatorFilter<RecipeRequest>>();
 
 app.Run();
