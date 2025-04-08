@@ -1,4 +1,5 @@
-﻿using RecipeBook.Repository.Entities;
+﻿using Microsoft.EntityFrameworkCore;
+using RecipeBook.Repository.Entities;
 
 namespace RecipeBook.Repository.Repositories;
 
@@ -13,6 +14,8 @@ internal class IngredientRepository : IIngredientRepository
 
     public IEnumerable<IngredientsEntity> GetAll()
     {
-        return _context.Ingredient.ToList();
+        return _context.Ingredient
+            .Include(ingredient => ingredient.UnitOfMeasurement)
+            .ToList();
     }
 }

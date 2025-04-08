@@ -12,7 +12,7 @@ var connectionString = builder.Configuration["Database:ConnectionString"];
 
 services.AddOpenApi();
 services.AddDbContext<RecipeBookContext>(optionsBuilder =>
-    optionsBuilder.UseSqlite($"Data Source={connectionString}")
+    optionsBuilder.UseSqlite(connectionString)
             .UseAsyncSeeding(async (context, _, cts) =>
             {
                 context.AddCategoriesIfNotExists();

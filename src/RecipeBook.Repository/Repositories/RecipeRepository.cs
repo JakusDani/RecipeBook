@@ -18,8 +18,6 @@ internal class RecipeRepository : IRecipeRepository
             .Include(recipe => recipe.Category)
             .Include(recipe => recipe.Images)
             .Include(recipe => recipe.Ingredients)
-                .ThenInclude(ingredient => ingredient.UnitOfMeasurement)
-                .ThenInclude(unit => unit.MeasurementSystem)
             .ToList();
     }
 }
