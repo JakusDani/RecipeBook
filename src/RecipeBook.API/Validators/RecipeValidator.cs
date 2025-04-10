@@ -1,7 +1,7 @@
 ﻿using FluentValidation;
 using RecipeBook.Common.Models.Requests;
 
-namespace RecipeBook.API.Validations;
+namespace RecipeBook.API.Validators;
 
 public class RecipeValidator : AbstractValidator<RecipeRequest>
 {

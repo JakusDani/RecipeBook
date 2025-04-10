@@ -1,9 +1,8 @@
 using FluentValidation;
 using Microsoft.EntityFrameworkCore;
-using RecipeBook.API.MiddleWares;
-using RecipeBook.API.Validations;
+using RecipeBook.API.Endpoints;
+using RecipeBook.API.Validators;
 using RecipeBook.Common.Extension;
-using RecipeBook.Common.Models.Requests;
 using RecipeBook.Repository;
 using RecipeBook.Repository.Extensions;
 using Scalar.AspNetCore;
@@ -17,13 +16,13 @@ var connectionString = builder.Configuration["Database:ConnectionString"];
 services.AddOpenApi();
 services.AddDbContext<RecipeBookContext>(optionsBuilder =>
     optionsBuilder.UseSqlite(connectionString)
-            .UseAsyncSeeding(async (context, _, cts) =>
-            {
-                context.AddCategoriesIfNotExists();
-                context.AddMeasurementSystemIfNotExists();
-                context.AddUnitOfMeasurementIfNotExists();
-                await context.SaveChangesAsync(cts);
-            }));
+        .UseAsyncSeeding(async (context, _, cts) =>
+        {
+            context.AddCategoriesIfNotExists();
+            context.AddMeasurementSystemIfNotExists();
+            context.AddUnitOfMeasurementIfNotExists();
+            await context.SaveChangesAsync(cts);
+        }));
 
 services.AddTransient<IRepositoryManager, RepositoryManager>();
 builder.Services.AddValidatorsFromAssemblyContaining<RecipeValidator>();
@@ -31,14 +30,14 @@ builder.UseSerilogInWebApp();
 
 var app = builder.Build();
 
-await using (var serviceScope = app.Services.CreateAsyncScope())
-await using (var context = serviceScope.ServiceProvider.GetRequiredService<RecipeBookContext>())
-{
-    await context.Database.EnsureCreatedAsync();
-}
-
 if (app.Environment.IsDevelopment())
 {
+    await using (var serviceScope = app.Services.CreateAsyncScope())
+    await using (var context = serviceScope.ServiceProvider.GetRequiredService<RecipeBookContext>())
+    {
+        await context.Database.EnsureCreatedAsync();
+    }
+
     app.MapOpenApi();
     app.MapScalarApiReference(options =>
     {
@@ -49,14 +48,6 @@ if (app.Environment.IsDevelopment())
 
 app.UseSerilogRequestLogging();
 app.UseHttpsRedirection();
-
-app.MapGet("/", (ILogger<Program> logger,
-    IRepositoryManager repoManager,
-    IValidator<RecipeRequest> validator) =>
-{
-    logger.LogInformation("Select all record...");
-    var allRecipe = repoManager.RecipeRepository.GetAll();
-    return string.Join(", ", allRecipe.Select(x => x.Name));
-}).AddEndpointFilter<RecipeValidatorFilter<RecipeRequest>>();
+app.UseEndpoints();
 
 app.Run();
